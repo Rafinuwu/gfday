@@ -46,7 +46,7 @@ body {
 /* Character Sprite - Updated to use an image */
 .character-sprite {
     position: absolute;
-    width: 24px; 
+    width: 24px;
     height: 32px;
     left: 50px;
     bottom: 120px;
@@ -54,7 +54,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transform: scale(5); /* Made character bigger */
+    transform: scale(6); /* Made character even bigger */
     transition: left 3s ease-in-out;
     z-index: 10;
     image-rendering: pixelated;
@@ -67,28 +67,23 @@ body {
 }
 
 @keyframes walk {
-    0%, 100% { transform: scale(5) translateY(0px); }
-    50% { transform: scale(5) translateY(-4px); }
+    0%, 100% { transform: scale(6) translateY(0px); }
+    50% { transform: scale(6) translateY(-4px); }
 }
 
-/* Chest Sprite - More Pixelated */
+/* Chest Sprite - Updated to use chesttt.png image */
 .chest-sprite {
     position: absolute;
-    width: 24px;
-    height: 16px;
+    /* Adjust width and height based on your image's dimensions */
+    width: 32px;
+    height: 32px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(6);
-    background: 
-        linear-gradient(to right, transparent 0px, transparent 2px, #8B4513 2px, #8B4513 22px, transparent 22px),
-        linear-gradient(to bottom, transparent 0px, transparent 8px, #8B4513 8px, #8B4513 16px, transparent 16px),
-        linear-gradient(to right, transparent 0px, transparent 2px, #CD853F 2px, #CD853F 22px, transparent 22px),
-        linear-gradient(to bottom, transparent 0px, transparent 0px, #CD853F 0px, #CD853F 8px, transparent 8px),
-        linear-gradient(to right, transparent 0px, transparent 10px, #FFD700 10px, #FFD700 14px, transparent 14px),
-        linear-gradient(to bottom, transparent 0px, transparent 6px, #FFD700 6px, #FFD700 10px, transparent 10px),
-        linear-gradient(to right, transparent 0px, transparent 1px, #696969 1px, #696969 3px, transparent 3px, transparent 21px, #696969 21px, #696969 23px, transparent 23px),
-        linear-gradient(to bottom, transparent 0px, transparent 4px, #696969 4px, #696969 6px, transparent 6px);
-    background-size: 24px 16px;
+    transform: translate(-50%, -50%) scale(4); /* Adjust scale as needed */
+    background-image: url('chesttt.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
     z-index: 5;
     transition: transform 0.3s ease;
@@ -98,7 +93,7 @@ body {
 }
 
 .chest-sprite:hover {
-    transform: translate(-50%, -50%) scale(6.5);
+    transform: translate(-50%, -50%) scale(4.5); /* Adjust hover scale as needed */
 }
 
 .chest-sprite.opening {
@@ -106,15 +101,15 @@ body {
 }
 
 @keyframes chestOpen {
-    0% { transform: translate(-50%, -50%) scale(6) rotateX(0deg); }
-    50% { transform: translate(-50%, -50%) scale(6) rotateX(-30deg); }
-    100% { transform: translate(-50%, -50%) scale(6) rotateX(0deg); }
+    0% { transform: translate(-50%, -50%) scale(4) rotateX(0deg); }
+    50% { transform: translate(-50%, -50%) scale(4) rotateX(-30deg); }
+    100% { transform: translate(-50%, -50%) scale(4) rotateX(0deg); }
 }
 
-/* Text Prompt - Moved to the top */
+/* Text Prompt */
 .text-prompt {
     position: absolute;
-    top: 30px; /* Moved from bottom to top */
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     background: #000000;
@@ -233,38 +228,39 @@ body {
 /* Responsive Design for iPhone 13 */
 @media (max-width: 390px) and (max-height: 844px) {
     .character-sprite {
-        transform: scale(4); /* Made character bigger on mobile */
+        transform: scale(5); /* Made character bigger on mobile */
         bottom: 80px; /* Adjusted character ground position */
     }
-    
+
     @keyframes walk {
-        0%, 100% { transform: scale(4) translateY(0px); }
-        50% { transform: scale(4) translateY(-4px); }
+        0%, 100% { transform: scale(5) translateY(0px); }
+        50% { transform: scale(5) translateY(-4px); }
     }
 
     .chest-sprite {
-        transform: translate(-50%, -50%) scale(5);
+        /* Adjust scale for mobile if needed */
+        transform: translate(-50%, -50%) scale(3.5);
     }
-    
+
     .text-prompt {
-        top: 20px; /* Moved to top on mobile */
+        top: 20px;
         padding: 15px 20px;
     }
 
     .pixel-text {
         font-size: 12px;
     }
-    
+
     .letter-scroll {
         margin: 10px;
         padding: 20px;
         transform: scale(0.7);
     }
-    
+
     .letter-text {
         font-size: 9px;
     }
-    
+
     .letter-title {
         font-size: 16px;
         margin-bottom: 20px;
