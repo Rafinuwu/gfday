@@ -13,16 +13,16 @@ html {
 
 body {
     font-family: 'Press Start 2P', cursive;
-    background-image: url('background.png'); /* Use the provided image */
-    background-size: cover; /* Cover the entire viewport */
+    background-image: url('background.png');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom; /* Position at the bottom center */
+    background-position: center bottom;
     overflow: hidden;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
-    min-height: -webkit-fill-available; /* For mobile viewport */
+    min-height: -webkit-fill-available;
 }
 
 #game-container {
@@ -33,45 +33,29 @@ body {
     image-rendering: pixelated;
 }
 
-/* Remove the gradient background from #background */
 #background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* The gradient background was here */
-    background-color: transparent; /* Make sure no color overlays the image */
+    background-color: transparent;
     image-rendering: pixelated;
 }
 
-/* Character Sprite - More Pixelated */
+/* Character Sprite - Updated to use an image */
 .character-sprite {
     position: absolute;
-    width: 16px;
-    height: 24px;
+    /* You may need to adjust width and height to match your image */
+    width: 24px; 
+    height: 32px;
     left: 50px;
     bottom: 120px;
-    background: 
-        /* Head - more square */
-        linear-gradient(to right, transparent 0px, transparent 4px, #8B4513 4px, #8B4513 12px, transparent 12px),
-        linear-gradient(to bottom, transparent 0px, transparent 2px, #8B4513 2px, #8B4513 10px, transparent 10px),
-        /* Hair - blocky */
-        linear-gradient(to right, transparent 0px, transparent 3px, #000000 3px, #000000 13px, transparent 13px),
-        linear-gradient(to bottom, transparent 0px, transparent 0px, #000000 0px, #000000 6px, transparent 6px),
-        /* White shirt - pixelated */
-        linear-gradient(to right, transparent 0px, transparent 2px, #FFFFFF 2px, #FFFFFF 14px, transparent 14px),
-        linear-gradient(to bottom, transparent 0px, transparent 10px, #FFFFFF 10px, #FFFFFF 18px, transparent 18px),
-        /* Brown pants - blocky */
-        linear-gradient(to right, transparent 0px, transparent 2px, #8B4513 2px, #8B4513 14px, transparent 14px),
-        linear-gradient(to bottom, transparent 0px, transparent 18px, #8B4513 18px, #8B4513 24px, transparent 24px),
-        /* Arms - pixelated */
-        linear-gradient(to right, transparent 0px, transparent 1px, #FFFFFF 1px, #FFFFFF 3px, transparent 3px, transparent 13px, #FFFFFF 13px, #FFFFFF 15px, transparent 15px),
-        linear-gradient(to bottom, transparent 0px, transparent 12px, #FFFFFF 12px, #FFFFFF 16px, transparent 16px),
-        /* Legs - blocky */
-        linear-gradient(to right, transparent 0px, transparent 4px, #8B4513 4px, #8B4513 6px, transparent 6px, transparent 10px, #8B4513 10px, #8B4513 12px, transparent 12px),
-        linear-gradient(to bottom, transparent 0px, transparent 18px, #8B4513 18px, #8B4513 24px, transparent 24px);
-    background-size: 16px 24px;
+    /* The new background image for the character */
+    background-image: url('character.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     transform: scale(4);
     transition: left 3s ease-in-out;
     z-index: 10;
@@ -250,24 +234,6 @@ body {
 .close-button:hover {
     background: #A52A2A;
     transform: scale(1.05);
-}
-
-/* Pixel Art Decorations */
-.pixel-cloud {
-    position: absolute;
-    background: #FFFFFF;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-}
-
-.pixel-flower {
-    position: absolute;
-    background: #FF69B4;
-    border: 2px solid #90EE90;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
 }
 
 /* Responsive Design for iPhone 13 */
